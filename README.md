@@ -1,3 +1,11 @@
+# Chatbot Meteorológico com IA
+
+Este projeto é um assistente virtual que utiliza a API do Open-Meteo e a inteligência do Google Gemini para fornecer previsões do tempo detalhadas e objetivas.
+
+## ⚙️ Arquitetura do Projeto (Fluxo)
+
+Abaixo podes ver como o sistema processa as mensagens e consulta os dados:
+
 ```mermaid
 flowchart TD
     %% Estilos
@@ -36,4 +44,3 @@ flowchart TD
     WeatherAPI -->|5. Dados de 7 dias| GeminiGen
     GeminiGen -->|6. Resposta Final| Interface
     Interface -.->|7. Salva Log| Log
-```
