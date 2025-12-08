@@ -1,3 +1,4 @@
+```mermaid
 flowchart TD
     %% Estilos
     classDef user fill:#ffffff,stroke:#333,stroke-width:2px;
@@ -6,7 +7,7 @@ flowchart TD
     classDef api fill:#fff3cd,stroke:#856404,stroke-width:2px;
     classDef storage fill:#e2e3e5,stroke:#383d41,stroke-width:2px;
 
-    %% Nós - VERSAO BLINDADA (SEM CARACTERES ESPECIAIS)
+    %% Nós
     User([Usuario]):::user
     Interface[App Streamlit Visual]:::app
     
@@ -35,3 +36,4 @@ flowchart TD
     WeatherAPI -->|5. Dados de 7 dias| GeminiGen
     GeminiGen -->|6. Resposta Final| Interface
     Interface -.->|7. Salva Log| Log
+```
