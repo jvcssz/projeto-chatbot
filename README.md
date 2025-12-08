@@ -6,7 +6,7 @@
 ## Sobre o Projeto
 Este projeto é um assistente virtual conversacional focado em meteorologia. Diferente de aplicações de clima tradicionais, ele utiliza **Inteligência Artificial Generativa (LLM)** para interpretar perguntas em linguagem natural, extrair intenções e fornecer respostas contextualizadas, objetivas e com tom jornalístico.
 
-O sistema é capaz de buscar dados históricos (passado) e previsões futuras (até 4 dias), mantendo o contexto da conversa e registrando logs para auditoria.
+O sistema é capaz de buscar dados históricos (passado) e previsões futuras (até 5 dias), mantendo o contexto da conversa e registrando logs para auditoria.
 
 ---
 
@@ -49,7 +49,7 @@ flowchart TD
     Decisao -- Sim --> WeatherAPI
     Decisao -- Nao --> Interface
     
-    WeatherAPI -->|5. Dados de 4 dias| GeminiGen
+    WeatherAPI -->|5. Dados de 5 dias| GeminiGen
     GeminiGen -->|6. Resposta Final| Interface
     Interface -.->|7. Salva Log| Log
 ```
@@ -59,7 +59,7 @@ flowchart TD
 ## Funcionalidades Principais
 
 * **Processamento de Linguagem Natural (NLP):** O usuário não precisa digitar apenas o nome da cidade. O bot entende frases como *"Choveu ontem no bairro da Lapa?"* e extrai o local correto.
-* **Análise Temporal:** O sistema consulta dados de **2 dias atrás** até **7 dias à frente**, permitindo perguntas sobre o passado recente e o futuro.
+* **Análise Temporal:** O sistema consulta dados de **2 dias atrás** até **5 dias à frente**, permitindo perguntas sobre o passado recente e o futuro.
 * **Persistência de Logs:** Todas as interações (pergunta, resposta, local detectado e condições climáticas) são salvas automaticamente em um arquivo `historico_logs.csv`.
 * **Portabilidade:** O código utiliza caminhos relativos, funcionando em qualquer máquina sem necessidade de configuração de pastas complexas.
 
@@ -89,7 +89,7 @@ Utiliza a IA para limpar a entrada do usuário. Remove ruídos da frase e isola 
 Converte o nome da cidade em coordenadas geográficas (Latitude e Longitude) consultando a API de Geocoding. Inclui lógica de *fallback* para garantir que o resultado mais relevante seja retornado.
 
 ### 3. `obter_previsao(lat, lon)`
-Realiza a requisição dos dados brutos. Configurada para buscar janelas de tempo estendidas (`past_days=2` e `forecast_days=7`) e dados horários de precipitação para maior precisão.
+Realiza a requisição dos dados brutos. Configurada para buscar janelas de tempo estendidas (`past_days=2` e `forecast_days=5`) e dados horários de precipitação para maior precisão.
 
 ### 4. `gerar_resposta_nlp(...)`
 O "cérebro" da resposta. Recebe os dados numéricos e utiliza um **Prompt de Sistema** para transformar números em um texto jornalístico, objetivo e sem alucinações.
@@ -122,6 +122,7 @@ Siga os passos abaixo para rodar o projeto localmente:
     streamlit run app.py
 
     ```
+
 
 
 
