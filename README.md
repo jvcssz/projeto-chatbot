@@ -77,7 +77,7 @@ flowchart TD
 
 ---
 
-## ⚙️ Detalhamento Técnico das Funções
+## Detalhamento Técnico das Funções
 
 Para fins de manutenção e entendimento da lógica, abaixo descreve-se a responsabilidade de cada módulo:
 
@@ -122,5 +122,6 @@ Siga os passos abaixo para rodar o projeto localmente:
     streamlit run app.py
 
     ```
+
 
 
