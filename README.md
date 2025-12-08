@@ -110,7 +110,7 @@ Siga os passos abaixo para rodar o projeto localmente:
 
 2.  **Instale as dependências:**
     ```bash
-    pip install -r requirements.txt
+    pip install -r requisitos.txt
     ```
 
 3.  **Configuração da API Key:**
@@ -122,3 +122,4 @@ Siga os passos abaixo para rodar o projeto localmente:
     streamlit run app.py
 
     ```
+
