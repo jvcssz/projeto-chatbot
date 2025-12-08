@@ -1,16 +1,16 @@
-# 🌦️ Chatbot Meteorológico
+# Chatbot Meteorológico
 
 > **Versão:** 1.0.0
 > **Tecnologia:** Python, Streamlit, Google Gemini (LLM), Open-Meteo
 
-## 📋 Sobre o Projeto
+## Sobre o Projeto
 Este projeto é um assistente virtual conversacional focado em meteorologia. Diferente de aplicações de clima tradicionais, ele utiliza **Inteligência Artificial Generativa (LLM)** para interpretar perguntas em linguagem natural, extrair intenções e fornecer respostas contextualizadas, objetivas e com tom jornalístico.
 
 O sistema é capaz de buscar dados históricos (passado) e previsões futuras (até 7 dias), mantendo o contexto da conversa e registrando logs para auditoria.
 
 ---
 
-## 🏗️ Arquitetura do Sistema
+## Arquitetura do Sistema
 
 O projeto segue um fluxo de dados linear combinando **NLP** (Processamento de Linguagem Natural) com dados determinísticos (APIs de clima).
 
@@ -56,7 +56,7 @@ flowchart TD
 
 ---
 
-## 🚀 Funcionalidades Principais
+## Funcionalidades Principais
 
 * **Processamento de Linguagem Natural (NLP):** O usuário não precisa digitar apenas o nome da cidade. O bot entende frases como *"Choveu ontem no bairro da Lapa?"* e extrai o local correto.
 * **Análise Temporal:** O sistema consulta dados de **2 dias atrás** até **7 dias à frente**, permitindo perguntas sobre o passado recente e o futuro.
@@ -65,7 +65,7 @@ flowchart TD
 
 ---
 
-## 🛠️ Stack Tecnológico
+## Stack Tecnológico
 
 | Tecnologia | Função no Projeto |
 | :--- | :--- |
@@ -99,7 +99,7 @@ Módulo de auditoria. Verifica a existência do diretório de logs e registra a 
 
 ---
 
-## 📦 Instalação e Execução
+## Instalação e Execução
 
 Siga os passos abaixo para rodar o projeto localmente:
 
@@ -122,4 +122,5 @@ Siga os passos abaixo para rodar o projeto localmente:
     streamlit run app.py
 
     ```
+
 
