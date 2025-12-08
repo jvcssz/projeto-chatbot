@@ -6,7 +6,7 @@
 ## Sobre o Projeto
 Este projeto é um assistente virtual conversacional focado em meteorologia. Diferente de aplicações de clima tradicionais, ele utiliza **Inteligência Artificial Generativa (LLM)** para interpretar perguntas em linguagem natural, extrair intenções e fornecer respostas contextualizadas, objetivas e com tom jornalístico.
 
-O sistema é capaz de buscar dados históricos (passado) e previsões futuras (até 7 dias), mantendo o contexto da conversa e registrando logs para auditoria.
+O sistema é capaz de buscar dados históricos (passado) e previsões futuras (até 4 dias), mantendo o contexto da conversa e registrando logs para auditoria.
 
 ---
 
@@ -49,7 +49,7 @@ flowchart TD
     Decisao -- Sim --> WeatherAPI
     Decisao -- Nao --> Interface
     
-    WeatherAPI -->|5. Dados de 7 dias| GeminiGen
+    WeatherAPI -->|5. Dados de 4 dias| GeminiGen
     GeminiGen -->|6. Resposta Final| Interface
     Interface -.->|7. Salva Log| Log
 ```
@@ -122,6 +122,7 @@ Siga os passos abaixo para rodar o projeto localmente:
     streamlit run app.py
 
     ```
+
 
 
 
