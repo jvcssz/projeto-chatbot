@@ -6,31 +6,31 @@ flowchart TD
     classDef api fill:#fff3cd,stroke:#856404,stroke-width:2px;
     classDef storage fill:#e2e3e5,stroke:#383d41,stroke-width:2px;
 
-    %% Nós - REMOVI OS PARENTESES PARA EVITAR ERROS
-    User([👤 Usuário]):::user
-    Interface[💻 App Streamlit - Visual]:::app
+    %% Nós - VERSAO BLINDADA (SEM CARACTERES ESPECIAIS)
+    User([Usuario]):::user
+    Interface[App Streamlit Visual]:::app
     
-    subgraph Inteligencia [🧠 Inteligência Artificial]
-        GeminiNLP[Gemini 2.5 - Interpretar]:::ai
-        GeminiGen[Gemini 2.5 - Gerar]:::ai
+    subgraph Inteligencia [Inteligencia Artificial]
+        GeminiNLP[Gemini Interpretar Texto]:::ai
+        GeminiGen[Gemini Gerar Resposta]:::ai
     end
 
-    subgraph DadosExternos [☁️ APIs Externas]
-        GeoAPI((OpenMeteo - Local)):::api
-        WeatherAPI((OpenMeteo - Clima)):::api
+    subgraph DadosExternos [APIs Externas]
+        GeoAPI((OpenMeteo Localizacao)):::api
+        WeatherAPI((OpenMeteo Previsao)):::api
     end
     
-    Decisao{📍 Local Encontrado?}
-    Log[(📂 Arquivo CSV Log)]:::storage
+    Decisao{Local Encontrado?}
+    Log[(Arquivo CSV Historico)]:::storage
 
-    %% O Fluxo
+    %% Fluxo
     User -->|1. Envia Pergunta| Interface
     Interface -->|2. Envia Texto| GeminiNLP
     GeminiNLP -->|3. Retorna Cidade| GeoAPI
-    GeoAPI -->|4. Retorna Lat/Lon| Decisao
+    GeoAPI -->|4. Retorna Coordenadas| Decisao
     
     Decisao -- Sim --> WeatherAPI
-    Decisao -- Não --> Interface
+    Decisao -- Nao --> Interface
     
     WeatherAPI -->|5. Dados de 7 dias| GeminiGen
     GeminiGen -->|6. Resposta Final| Interface
