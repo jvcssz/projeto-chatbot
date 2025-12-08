@@ -18,7 +18,7 @@ Certifique-se de ter o Python instalado.
 
 2. Instale as dependências:
 
-   pip install -r requirements.txt
+   pip install -r requisitos.txt
 
 
 
@@ -76,4 +76,5 @@ flowchart TD
     WeatherAPI -->|5. Dados de 7 dias| GeminiGen
     GeminiGen -->|6. Resposta Final| Interface
     Interface -.->|7. Salva Log| Log
+
 
